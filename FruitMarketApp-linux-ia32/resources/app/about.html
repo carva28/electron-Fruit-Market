@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Informação da Loja de frutas!</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+	<ul>
+		  <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+		  <li><a href="fotos.html"><i class="fas fa-apple-alt"></i></a></li>
+		  <li><a href="galeria.html"><i class="far fa-images"></i></a></li>
+		  <li><a class="active" href="about.html"><i class="fas fa-info-circle"></i></a></li>
+	</ul>
+<div class="body">
+
+
+
+	
+	<div class="content-wrap">
+		<div class="map-wrap">
+		<iframe frameborder="0" height="550" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48452.341027282644!2d-8.692542022342908!3d40.62389821122833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464f92f71a951%3A0x68210b8bd47f81b0!2sRua+de+Cam%C3%B5es%2C+Porto!5e0!3m2!1spt-PT!2spt!4v1534776381621"style="border:0" width="100%"></iframe>
+		</div>
+		<div class="layout-center">
+      <div class="form-wrap">
+        
+        <div class="address-block">
+          <h2 class="sub-title">Contact Informations</h2>
+          
+          <h4> Rua de Camões</h4>
+          <h4>  +351 212 423 122</h4>
+			<h4> info@abc.com</h4>
+        
+        </div>
+      </div>
+		</div>
+		
+	</div>
+	
+		  
+	</div>
+
+	
+	
+	<script>
+	
+	$('.map-wrap')
+	.click(function(){
+			$(this).find('iframe').addClass('clicked')})
+	.mouseleave(function(){
+			$(this).find('iframe').removeClass('clicked')});
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	<p>2017 &copy; Diogo Carvalho</p>
+	
+	
+	</div>
+</body>
+</html>

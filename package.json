@@ -1,0 +1,30 @@
+{
+  "name": "electron-fruit-market",
+  "version": "1.0.0",
+  "description": "A fruit store Electron application",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "start": "electron .",
+    "package": "electron-packager . FruitMarketApp --platform=win32 --arch=all",
+"archive": "asar pack Linuxapp-linux-x64/resources/app Linuxapp-linux-x64/resources/app.asar"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "asar": "^0.14.3",
+    "electron": "^2.0.7",
+    "electron-packager": "^12.1.1"
+  },
+  "dependencies": {
+    "instafeed.js": "^1.4.1"
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Loja de frutas!</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+	  <ul>
+		   <li><a class="active" href="index.html"><i class="fas fa-home"></i></a></li>
+		  <li><a href="fotos.html"><i class="fas fa-apple-alt"></i></a></li>
+		  <li><a href="galeria.html"><i class="far fa-images"></i></a></li>
+		  <li><a  href="about.html"><i class="fas fa-info-circle"></i></a></li>
+	</ul>
+	  <div class="body">
+    <h1>Bem-vindo!</h1>
+		    
+		  <h1 id="time_digital"></h1>
+	
+
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+	
+		
+    </script>
+		  
+
+		  
+		  
+	  
+		  
+		  
+		  
+	 <svg id="clock" viewBox="0 0 330 330">
+  <circle id="clock-face" class="line" cx="165" cy="165" r="160"/>
+  <line id="minute-hand" class="line" x1="165" y1="163.7" x2="165" y2="35.6"/>
+  <line id="hour-hand" class="line" x1="165" y1="163.7" x2="165" y2="90"/>
+  <line id="second-hand" class="line" x1="165" y1="163.7" x2="165" y2="35.6"/>
+  <circle id="clock-center" cx="165" cy="163.7" r="5"/>
+  <title id="readable-time">São: </title>
+</svg>
+
+		  
+		  
+		  
+		  <script>
+		  
+		  var secondhand = document.getElementById('second-hand'),
+    minutehand = document.getElementById('minute-hand'),
+    hourhand = document.getElementById('hour-hand'),
+    readabletime = document.getElementById('readable-time');
+
+function alwaysTwoDigits(digits) {
+  if (digits < 10) {
+    digits = "0" + digits;
+  }
+  
+  return digits;
+}
+
+function twoDigitTime(hour,minute,second) {
+  var minutes = alwaysTwoDigits(minute);
+  var seconds = alwaysTwoDigits(second);
+  
+  return hour + ":" + minutes + ":" + seconds;
+}
+
+function moveHands(time) {
+  var time = new Date(),
+      seconds = (360/60) * time.getSeconds(),
+      minutes = (360/60) * time.getMinutes(),
+      hours = ( (360/12) * time.getHours() ) + (minutes/60);
+  
+  
+  secondhand.style.transform = "rotate(" + seconds + "deg)";
+  minutehand.style.transform = "rotate(" + minutes + "deg)";
+  hourhand.style.transform = "rotate(" + hours + "deg)";
+  
+  readabletime.innerHTML = "Clock Time: " + twoDigitTime(time.getHours(), time.getMinutes(), time.getSeconds());
+  document.getElementById("time_digital").innerHTML = "São: " + twoDigitTime(time.getHours(), time.getMinutes(), time.getSeconds());
+}
+
+var clockItUp = setInterval( 'moveHands()', 1000);
+
+		  
+		  
+		  
+		  </script>
+		
+
+	  </div>
+  </body>
+</html>

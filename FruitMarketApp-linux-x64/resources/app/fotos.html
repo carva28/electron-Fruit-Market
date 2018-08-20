@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base de dados da Loja de frutas!</title>
+   
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+</head>
+<body>
+<ul>
+		   <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+		  <li><a class="active" href="fotos.html"><i class="fas fa-apple-alt"></i></a></li>
+		  <li><a href="galeria.html"><i class="far fa-images"></i></a></li>
+		  <li><a  href="about.html"><i class="fas fa-info-circle"></i></a></li>
+	</ul>
+<div class="body">
+
+ <div class = "container" > 
+
+
+        <p><strong>Clique para descobrir os artigos</strong></p> 
+        
+        <div id="records"></div> 
+        
+        
+      
+    </div> 
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+   
+    <script type="text/javascript"> 
+
+        $(function(){ 
+
+
+          $.ajax({ 
+
+            method: "GET", 
+            
+            url: "http://localhost/getrecords/getrecords.php",
+
+          }).done(function( data ) { 
+
+            var result= $.parseJSON(data); 
+
+            var string='<table width="100%"><tr> <th>Imagem</th><th>Nome</th> <th>Email</th><tr>';
+     
+           /* from result create a string of data and append to the div */
+          
+            $.each( result, function( key, value ) { 
+              
+              string += "<tr> \
+				<td>"+"<img id='"+value['id'] + "' src='"+value['first_name']+"' class='fotos_table'></td>\
+				<td>"+value['last_name']+'</td>  \
+                <td>'+value['email']+"</td> </tr>"; 
+                  }); 
+
+                 string += '</table>'; 
+
+              $("#records").html(string); 
+           }); 
+       
+    }); 
+    </script> 
+	
+	
+	
+</div>
+</body>
+</html>
