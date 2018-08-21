@@ -9,7 +9,11 @@ Also if you use the xampp you can import my sql bd which is in this repo.
 
 If you want to run in your computer you should install libgconf-2-4  with `sudo apt-get install libgconf-2-4`
 
+Don't forget to run the program you need to give permission:
 
+`chmod +x FruitMarketApp `
+
+`sudo ./FruitMarketApp` or click the app in folder
 
 
 ## Example UI 
